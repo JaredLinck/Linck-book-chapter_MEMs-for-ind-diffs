@@ -1,0 +1,2 @@
+# Linck-book-chapter_MEMs-for-ind-diffs
+This repository contains the R code and sample data file discussed in the forthcoming book chapter, "Analyzing individual differences in second language research with mixed effects models" to be included in the forthcoming edited volume, "Cognitive Individual Differences in L2 Processing and Acquisition" (John Benjamins), edited by Daniel Jackson, Gisela Granena, and Yucel Yilmaz.
