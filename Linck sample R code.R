@@ -12,14 +12,8 @@ rm(list = ls())
 library(lme4)
 
 ### Load data
-rtdata <- read.delim("Linck - sample dataset_rev.txt")
+rtdata <- read.delim("Linck - sample dataset.txt")
 rtdata$Subject <- as.factor(rtdata$Subject)
-
-
-#     ### 10/26 -- replacing rt with logrt, then saving back out to file.
-#       rtdata$rt <- log(rtdata$rt)
-#       colnames(rtdata)[6] <- "logrt"
-#       write.table(rtdata, file = "Linck - sample dataset_rev.txt", sep = "\t", row.names = FALSE)
 
 ### Manually create factor coding for 'language' and 'condition' variables. See text for details on model interpretation with contrast vs. dummy coding:
   ### Dummy coding for L1, L2, and L3 language variables, to allow proper uncorrelated random effects specification:
@@ -58,7 +52,7 @@ rtdata$Subject <- as.factor(rtdata$Subject)
   ###   z.ic varying by item only (not by subject, because it is a between-subject variable):
 
   #   m.3x2.IC_Rmaximal <- lmer(formula = rt ~ (L2 + L3)*condition*z.ic + ((L2 + L3)*condition|Subject) + ((L2 + L3)*condition*z.ic|stimulus), data = rtdata)
-  #               ## Failed to converge after 93 minutes. Error messages:
+  #               ## Note: Failed to converge after 93 minutes. Error messages:
   #               1: In commonArgs(par, fn, control, environment()) :
   #                 maxfun < 10 * length(par)^2 is not recommended.
   #               2: In optwrap(optimizer, devfun, getStart(start, rho$lower, rho$pp),  :
